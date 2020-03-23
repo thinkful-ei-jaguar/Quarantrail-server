@@ -4,8 +4,9 @@ const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
 const { NODE_ENV } = require('./config')
-const gameroutes=require('./game/game-router')
+//const gameroutes = require('./game/game-router')
 //our routes
+const leaderboard = require('./leaderboard/leader-router')
 const app = express();
 
 
@@ -17,6 +18,7 @@ app.use(morgan(morganOption));
 app.use(cors());
 app.use(helmet());
 //app.use('/api/routes',gameroutes)
+app.use('/api/leaderboard', leaderboard)
 
 
 app.use(function errorHandler(error, req, res, next) {
