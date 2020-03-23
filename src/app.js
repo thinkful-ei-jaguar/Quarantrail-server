@@ -16,7 +16,7 @@ const morganOption = NODE_ENV === 'production'
 app.use(morgan(morganOption));
 app.use(cors());
 app.use(helmet());
-//app.use('/api/routes',gameroutes)
+app.use('/api/game',gameroutes)
 
 
 app.use(function errorHandler(error, req, res, next) {
