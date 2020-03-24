@@ -41,10 +41,30 @@ describe('leaderboard endpoints',()=>{
                 .expect(200)
                 .expect(res => {
                     expect(res.body.length).to.eql(5)
-                    expect(res.body[0]>res.body[1])
-                    expect(res.body[1]>res.body[2])
-                    expect(res.body[2]>res.body[3])
-                    expect(res.body[3]>res.body[4])
+                    for(let i=1; i<res.body.length; i++){
+                        expect(res.body[i-1].score>res.body[i].score)
+                        // console.log('res: ',res.body[i].score)
+                    }
+                })
+        })
+    })
+    describe(`POST "/" request`, () => {
+        const expected = {id: 1, name: 'TU7', score: 53}
+        const testPost = { name: 'TU7', score: 53 }
+
+        it('responds 201 with a new score added to leaderboard', () => {
+            return supertest(app)
+                .post('/api/leaderboard')
+                .send(testPost)
+                .expect(201)
+                .expect(res => {
+                    db.from('leaderboard')
+                      .select('*')
+                      .then(row => {
+                          expect(row[0].id).to.eql(expected.id)
+                          expect(row[0].name).to.eql(expected.name)
+                          expect(row[0].score).to.eql(expected.score)
+                      })
                 })
         })
     })

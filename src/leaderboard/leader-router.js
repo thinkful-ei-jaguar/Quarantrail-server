@@ -17,7 +17,7 @@ leaderRouter
     const newScore = { name, score }
     LeaderService.postScore(req.app.get('db'), newScore)
       .then(data => {
-        res.status(204).end()
+        res.status(201).json(data)
       })
   })
 
