@@ -15,6 +15,11 @@ leaderRouter
   .post('/', jsonBodyParser, async (req,res,next)=> {
     const { score, name } = req.body
     const newScore = { name, score }
+    if(!name){
+      return res.status(400).json({
+        error: 'Missing name in request body'
+      })
+    }
     LeaderService.postScore(req.app.get('db'), newScore)
       .then(data => {
         res.status(201).json(data)

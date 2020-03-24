@@ -51,6 +51,7 @@ describe('leaderboard endpoints',()=>{
     describe(`POST "/" request`, () => {
         const expected = {id: 1, name: 'TU7', score: 53}
         const testPost = { name: 'TU7', score: 53 }
+        const badPost = { name: null, score: 12 }
 
         it('responds 201 with a new score added to leaderboard', () => {
             return supertest(app)
@@ -65,6 +66,14 @@ describe('leaderboard endpoints',()=>{
                           expect(row[0].name).to.eql(expected.name)
                           expect(row[0].score).to.eql(expected.score)
                       })
+                })
+        })
+        it('responds with 400 required error when no name is given', () => {
+            return supertest(app)
+                .post('/api/leaderboard')
+                .send(badPost)
+                .expect(400, {
+                    error: 'Missing name in request body'
                 })
         })
     })
