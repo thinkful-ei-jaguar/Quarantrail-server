@@ -4,7 +4,7 @@ const express =require('express');
 //const logger = require('../logger');
 //const bodyParser=express.json();
 const gameService=require('./game-service')
-const gameRouter=express.Router();
+const gameRouter = express.Router();
 
 gameRouter
 .get('/',(req,res,next)=>{
@@ -14,3 +14,5 @@ gameRouter
     })
     .catch(next)
 })
+
+module.exports = gameRouter;

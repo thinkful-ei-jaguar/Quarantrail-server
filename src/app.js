@@ -21,7 +21,7 @@ app.use(helmet());
 
 //app.use('/api/routes',gameroutes)
 app.use('/api/leaderboard', leaderboard)
-//app.use('/api/game',gameroutes)
+app.use('/api/game',gameroutes)
 
 
 
