@@ -1,7 +1,8 @@
 BEGIN;
 
 TRUNCATE
-"leaderboard";
+"leaderboard",
+"gameinfo";
 
 INSERT INTO "leaderboard" ("id", "name", "score")
 VALUES
@@ -10,7 +11,17 @@ VALUES
   (3, 'AAA', 2),
   (4, 'SAD', 13),
   (5, 'ASS', 4);
+INSERT INTO "gameinfo" ("id", "health", "boredom", "toiletpaper","food")
+VALUES
+  (
+    1,
+    100,
+    100,
+    3,
+    3
+  );
 
-  SELECT setval('leaderboard_id_seq', (SELECT MAX(id) from "leaderboard"));
+SELECT setval('leaderboard_id_seq', (SELECT MAX(id) from "leaderboard"));
 
-  COMMIT;
+
+COMMIT;
