@@ -7,7 +7,7 @@ const LeaderService = {
       )
       .from('leaderboard')
       .orderBy('score', 'desc')
-      .limit(5)
+      .limit(10)
   },
 
   postScore(db, newScore) {
