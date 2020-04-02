@@ -7,7 +7,9 @@ const { NODE_ENV } = require('./config')
 const gameroutes = require('./game/game-router')
 //our routes
 const leaderboard = require('./leaderboard/leader-router')
+// const chatRoute = require('./chat/chat-router')
 const app = express();
+const chat = express()
 
 
 const morganOption = NODE_ENV === 'production'
@@ -22,6 +24,7 @@ app.use(helmet());
 //app.use('/api/routes',gameroutes)
 app.use('/api/leaderboard', leaderboard)
 app.use('/api/game',gameroutes)
+// chat.use('/api/chat', chatRoute)
 
 
 
