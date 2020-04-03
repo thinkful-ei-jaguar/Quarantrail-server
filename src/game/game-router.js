@@ -49,6 +49,6 @@ gameRouter
             res.json(output)
         })
         .catch(next)
-})
+    })
 
 module.exports = gameRouter;
