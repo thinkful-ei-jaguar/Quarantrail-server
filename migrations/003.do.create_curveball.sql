@@ -5,7 +5,8 @@ CREATE TABLE IF NOT EXISTS curveball (
 
 CREATE TYPE location_category AS ENUM (
   'home',
-  'market'
+  'market',
+  'park'
 );
 
 ALTER TABLE curveball
