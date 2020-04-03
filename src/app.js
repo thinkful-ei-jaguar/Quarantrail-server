@@ -9,7 +9,7 @@ const gameroutes = require('./game/game-router')
 const leaderboard = require('./leaderboard/leader-router')
 // const chatRoute = require('./chat/chat-router')
 const app = express();
-const chat = express()
+// const chat = express()
 
 
 const morganOption = NODE_ENV === 'production'

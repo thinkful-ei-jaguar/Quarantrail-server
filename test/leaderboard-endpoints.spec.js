@@ -2,7 +2,6 @@ require('dotenv').config()
 const knex = require('knex')
 const app = require('../src/app')
 const helpers = require('./test-helpers')
-//const {TEST_DATABASE_URL} = require('../src/config')
 
 
 
@@ -11,7 +10,6 @@ describe('leaderboard endpoints',()=>{
 
     
     const testLeaderboard = helpers.makeLeaderboardArray();
-    //console.log('testleaderboard: ',testLeaderboard)
 
     before('make knex instance', () => {
         db = knex({
@@ -35,12 +33,12 @@ describe('leaderboard endpoints',()=>{
             )
         })
 
-        it('responds 200 with top 5 scores in descending order', () => {
+        it('responds 200 with top 10 scores in descending order', () => {
             return supertest(app)
                 .get('/api/leaderboard')
                 .expect(200)
                 .expect(res => {
-                    expect(res.body.length).to.eql(5)
+                    expect(res.body.length).to.eql(10)
                     for(let i=1; i<res.body.length; i++){
                         expect(res.body[i-1].score>res.body[i].score)
                         // console.log('res: ',res.body[i].score)
