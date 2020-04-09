@@ -16,6 +16,13 @@ This is the server used for the game QuaranTrail.
 + `/leaderboard` accepts GET and POST requests, GET request responds with top 5 scores on the leaderboard in descending order. POST requests require a body with keys of `name` and `score`, with their values as a string and number respectively. 
 + `/memes` accepts GET requests that returns a random meme from the DB.
 
+## Technology Used
+
++ Express
++ Node.js
++ PostgreSQL
++ Mocha/Chai
+
 ## Scripts
 + Start the application `npm start`
 
