@@ -100,11 +100,11 @@ function makeLeaderboardArray() {
         question: 'test question 2',
         setting: 'market'
       },
-      // {
-      //   id: 3,
-      //   question: 'test question 3',
-      //   setting: 'home'
-      // },
+      {
+        id: 3,
+        question: 'test question 3',
+        setting: 'park'
+      },
       // {
       //   id: 4,
       //   question: 'test question 4',
@@ -130,7 +130,7 @@ function makeLeaderboardArray() {
         decision: 'yes'
       },
       {
-        id: 1,
+        id: 2,
         curveball_id: curveballs[0].id,
         health: 0,
         boredom: 15,
@@ -139,7 +139,7 @@ function makeLeaderboardArray() {
         decision: 'no'
       },
       {
-        id: 1,
+        id: 3,
         curveball_id: curveballs[1].id,
         health: 12,
         boredom: -10,
@@ -148,8 +148,26 @@ function makeLeaderboardArray() {
         decision: 'yes'
       },
       {
-        id: 1,
+        id: 4,
         curveball_id: curveballs[1].id,
+        health: 0,
+        boredom: -5,
+        toiletpaper: 0,
+        food: 0,
+        decision: 'no'
+      },
+      {
+        id: 5,
+        curveball_id: curveballs[2].id,
+        health: 12,
+        boredom: -10,
+        toiletpaper: 0,
+        food: 1,
+        decision: 'yes'
+      },
+      {
+        id: 6,
+        curveball_id: curveballs[2].id,
         health: 0,
         boredom: -5,
         toiletpaper: 0,

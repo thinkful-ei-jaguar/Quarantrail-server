@@ -112,6 +112,31 @@ describe('game Endpoints', () => {
         .expect(200, expected)
     })
 
+    it('responds 200 with "park" question and appropriate impact', ()=>{
+      const correctPost = {
+        location:"park"
+      }
+      const expected = {
+        question: 'test question 3',
+        yes: {
+          health: 12,
+          boredom: -10,
+          toiletpaper: 0,
+          food: 1
+        },
+        no: {
+          health: 0,
+          boredom: -5,
+          toiletpaper: 0,
+          food: 0
+        }
+      }
+      return supertest(app)
+        .post('/api/game')
+        .send(correctPost)
+        .expect(200, expected)
+    })
+
     it('responds 400 "missing location in request body" when no location is given', () => {
       const incorrectBody = {}
       const expected = {
