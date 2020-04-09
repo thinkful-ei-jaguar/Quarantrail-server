@@ -1,6 +1,12 @@
 # QuaranTrail-Server
 This is the server used for the game QuaranTrail.
 
+## Written by QuaranTeam
++ Nghi Tran
++ Taylor Piccarreto
++ Robert Perez
++ Jaye Laguardia
+
 [Link] (https://github.com/thinkful-ei-jaguar/Coronatrail-client) to QuaranTrail GitHub
 
 ## API Endpoints
